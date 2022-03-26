@@ -25,7 +25,7 @@ public class DepartmentService {
 
         Department department = new Department();
         department.setName(dto.getName());
-        department.setCompany(companyRepository.getById(dto.getCompanyId()));
+        department.setCompany(companyRepository.findById(dto.getCompanyId()).get());
 
         Department save = departmentRepository.save(department);
 
@@ -59,7 +59,7 @@ public class DepartmentService {
         if (optionalDepartment.isPresent()) {
             Department department = new Department();
             department.setName(dto.getName());
-            department.setCompany(companyRepository.getById(dto.getCompanyId()));
+            department.setCompany(companyRepository.findById(dto.getCompanyId()).get());
 
             Department save = departmentRepository.save(department);
 

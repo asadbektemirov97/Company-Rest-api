@@ -32,8 +32,8 @@ public class WorkerService {
         Worker worker = new Worker();
         worker.setName(name);
         worker.setPhoneNumber(phoneNumber);
-        worker.setAddress(addressRepository.getById(addressId));
-        worker.setDepartment(departmentRepository.getById(departmentId));
+        worker.setAddress(addressRepository.findById(addressId).get());
+        worker.setDepartment(departmentRepository.findById(departmentId).get());
 
         workerRepository.save(worker);
 
@@ -71,8 +71,8 @@ public class WorkerService {
             Worker worker = new Worker();
             worker.setName(name);
             worker.setPhoneNumber(phoneNumber);
-            worker.setAddress(addressRepository.getById(addressId));
-            worker.setDepartment(departmentRepository.getById(departmentId));
+            worker.setAddress(addressRepository.findById(addressId).get());
+            worker.setDepartment(departmentRepository.findById(departmentId).get());
 
             workerRepository.save(worker);
 
